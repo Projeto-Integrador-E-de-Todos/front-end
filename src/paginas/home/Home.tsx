@@ -1,4 +1,4 @@
-import {useNavigate, Link} from 'react-router-dom';
+import React from 'react-router-dom';
 import homeLogo from '../../assets/logo.png';
 import './Home.css';
 
