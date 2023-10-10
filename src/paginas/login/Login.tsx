@@ -47,9 +47,9 @@ function login(e: ChangeEvent<HTMLFormElement>) {
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
+              placeholder="name@email.com.br"
               className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.usuario} 
+              value={usuarioLogin.login} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -81,7 +81,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
           <p>
             Ainda não tem uma conta?{' '}
             <Link to="/cadastro" className="text-indigo-800 hover:underline">
-              Matricule-se
+              Cadastre-se
             </Link>
           </p>
         </form>

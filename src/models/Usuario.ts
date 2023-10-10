@@ -1,10 +1,11 @@
-import Postagem  from "./Postagem";
+import Cursos  from "./Cursos";
 
 export default interface Usuario {
   id: number;
   nome: string;
-  usuario: string;
+  login: string;
+  data_nas: string;
   foto: string;
   senha: string;
-  postagem?: Postagem | null;
+  cursos?: Cursos | null;
 }

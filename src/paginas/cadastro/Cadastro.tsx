@@ -13,17 +13,19 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
-    usuario: '',
+    login: '',
     senha: '',
-    foto: ''
+    foto: '',
+    data_nas: ''
   })
 
   const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
     id: 0,
     nome: '',
-    usuario: '',
+    login: '',
     senha: '',
-    foto: ''
+    foto: '',
+    data_nas: ''
   })
 
   useEffect(() => {
@@ -81,19 +83,31 @@ function Cadastro() {
               name="nome"
               placeholder="Nome"
               className="border-2 border-slate-700 rounded p-2"
-              value={usuario.nome} 
+              value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuario</label>
+            <label htmlFor="login">Usuario</label>
             <input
               type="text"
-              id="usuario"
-              name="usuario"
-              placeholder="Usuario"
+              id="login"
+              name="login"
+              placeholder="name@email.com.br"
               className="border-2 border-slate-700 rounded p-2"
-              value={usuario.usuario} 
+              value={usuario.login}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <label htmlFor="data_nas">Data de Nascimento</label>
+            <input
+              type="date"
+              id="data_nas"
+              name="data_nas"
+              placeholder="dd.mm.aaaa"
+              className="border-2 border-slate-700 rounded p-2"
+              value={usuario.data_nas}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -103,9 +117,9 @@ function Cadastro() {
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
+              placeholder="endereço url da foto"
               className="border-2 border-slate-700 rounded p-2"
-              value={usuario.foto} 
+              value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -117,7 +131,7 @@ function Cadastro() {
               name="senha"
               placeholder="Senha"
               className="border-2 border-slate-700 rounded p-2"
-              value={usuario.senha} 
+              value={usuario.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
