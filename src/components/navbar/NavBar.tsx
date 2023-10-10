@@ -26,7 +26,9 @@ function Navbar() {
     <>
      <div className='w-full bg-green-900 text-white flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
+
           <Link to='/home' className='text-2xl font-bold uppercase'><img src={logo} alt="" className='logo'/></Link>
+
 
             <div className='flex flex-row gap-4 items-center '>
     
