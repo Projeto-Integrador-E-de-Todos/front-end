@@ -1,0 +1,24 @@
+.cicle {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; 
+    width: 70px; 
+    height: 70px;
+}
+
+.user {
+    width: 100%;
+    height: auto;
+}
+
+.redondo{
+    border-radius: 50%;
+    width: 75px; 
+    height: 75px;
+}
+
+.logo{
+    width: 130px;
+    height: 130px;
+}

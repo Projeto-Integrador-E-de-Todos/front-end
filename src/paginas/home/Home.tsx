@@ -16,6 +16,7 @@ function Home() {
           Voltar 
         </Link>
       </div>
+      
 
     </div>
   );
