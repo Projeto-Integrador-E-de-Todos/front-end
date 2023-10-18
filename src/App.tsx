@@ -9,7 +9,9 @@ import Cadastro from './paginas/cadastro/Cadastro';
 import Home from './paginas/home/Home';
 import { AuthProvider } from './contexts/AuthContext';
 import ListaTemas from './components/temas/listaTemas/ListaTemas';
-
+import ListaCursos from './components/cursos/listaCursos/ListaCursos';
+import FormularioCurso from './components/cursos/formularioCurso/FormularioCurso';
+import DeletarCurso from './components/cursos/deletarCurso/DeletarCurso';
 
 function App() {
   return (
@@ -24,6 +26,11 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/home" element={<Home />} />
               <Route path="/temas" element={<ListaTemas />} />
+              <Route path="/cursos" element={<ListaCursos />} />
+              <Route path="/cadastroCurso" element={<FormularioCurso />} />
+              <Route path="/editarCurso/:id" element={<FormularioCurso />} />
+              <Route path="/deletarCurso/:id" element={<DeletarCurso />} />
+
             </Routes>
           </div>
           <Footer />

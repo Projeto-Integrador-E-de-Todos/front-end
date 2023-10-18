@@ -34,7 +34,7 @@ function Navbar() {
             <div className='flex flex-row gap-4 items-center '>
     
                 <Link to='/home' className='hover:underline'>Home</Link>
-                <div className='hover:underline'>Cursos</div>
+                <Link to='/cursos' className='hover:underline'>Cursos</Link>
                 <div>
                   <label className="relative block">
                   <span className="sr-only">Search</span>
