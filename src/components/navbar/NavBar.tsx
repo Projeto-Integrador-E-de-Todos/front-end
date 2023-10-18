@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, Fragment } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
+import { Menu, Transition } from '@headlessui/react'
 import './navbar.css'
 import gu from '../../assets/img/gu.jpg'
 import lupa from '../../assets/img/lupa.png'
@@ -9,7 +10,7 @@ import logo from '../../assets/logo.png'
 
 
 function Navbar() {
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   const { usuario, handleLogout } = useContext(AuthContext)
 
@@ -33,10 +34,7 @@ function Navbar() {
             <div className='flex flex-row gap-4 items-center '>
     
                 <Link to='/home' className='hover:underline'>Home</Link>
-                <Link to='/cadastro' className='hover:underline'>Matricule-se</Link>
-                <Link to='/login' className='hover:underline'>Login</Link>
                 <div className='hover:underline'>Cursos</div>
-                <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
                 <div>
                   <label className="relative block">
                   <span className="sr-only">Search</span>
@@ -48,10 +46,60 @@ function Navbar() {
                   </label>
                 </div>
             
-                <div className='cicle border-4  border-purple-600 hover:border-purple-900'>
-                  <img src={gu} alt="" className='user '/>
-                </div> 
               
+                <Menu>
+                {({ open }) => (
+                  <>
+
+                    <Menu.Button className='cicle ring-4 ring-blue-300 focus:outline-none focus:ring-4 focus:ring-violet-300 pb-5'>
+                      <div>
+                       <img src={gu} alt="" className='user '/>
+                      </div>
+                    </Menu.Button>
+                  <Transition
+                    show={open}
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                    >
+                      <Menu.Items className="absolute right-0 mt-2 w-70 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div className="px-3 py-4 ">
+              <Menu.Item>
+                {({ active }) => (
+                  <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                    <Link to='/cadastro' className='hover:underline'>Matricule-se</Link>
+                  </button>
+                )}
+              </Menu.Item>
+              </div>
+              <div className='px-3 py-4'>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                     <Link to='/login' className='hover:underline'>Login</Link>
+                    </button>
+                  )}
+                </Menu.Item>
+              </div>
+              
+            <div className="px-3 py-4">
+              <Menu.Item>
+                {({ active }) => (
+                  <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
+                   <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
+            
+          </Menu.Items>
+          </Transition> 
+                </>
+                )}
+                </Menu>
             </div>
           </div>
         </div>
