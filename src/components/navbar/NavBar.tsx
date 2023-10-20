@@ -1,27 +1,24 @@
-import React, { useContext, Fragment } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../contexts/AuthContext'
-import { Menu, Transition } from '@headlessui/react'
-import './navbar.css'
-import gu from '../../assets/img/gu.jpg'
-import lupa from '../../assets/img/lupa.png'
-import logo from '../../assets/logo.png'
-
-
+import React, { useContext, Fragment } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { Menu, Transition } from "@headlessui/react";
+import "./navbar.css";
+import gu from "../../assets/img/gu.jpg";
+import lupa from "../../assets/img/lupa.png";
+import logo from "../../assets/logo.png";
 
 function Navbar() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario, handleLogout } = useContext(AuthContext);
 
   function logout() {
-      handleLogout()
-      alert('Usuário deslogado com sucesso')
-      navigate('/login')
+    handleLogout();
+    alert("Usuário deslogado com sucesso");
+    navigate("/login");
   }
 
-  let navbarComponent
-  
+  let navbarComponent;
 
   return (
     <>
@@ -30,21 +27,36 @@ function Navbar() {
 
           <Link to='/home' className='text-2xl font-bold uppercase'><img src={logo} alt="" className='logo'/></Link>
 
-
-            <div className='flex flex-row gap-4 items-center '>
-    
-                <Link to='/home' className='hover:underline'>Home</Link>
-                <div className='hover:underline'>Cursos</div>
-                <div>
-                  <label className="relative block">
-                  <span className="sr-only">Search</span>
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-                  <img src={lupa} alt=""/>
-                  <svg className="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"> </svg>
-                  </span>
-                  <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Cursos..." type="text" name="search"/>
-                  </label>
-                </div>
+          <div className="flex flex-row gap-4 items-center ">
+            <Link to="/home" className="hover:underline">
+              Home
+            </Link>
+            <Link to="/cursos" className="hover:underline">
+              Cursos
+            </Link>
+            <Link to="/categorias" className="hover:underline">
+              Categorias
+            </Link>
+            <Link to="/cadastroCategoria" className="hover:underline">
+              cadastro categoria
+            </Link>
+            <div>
+              <label className="relative block">
+                <span className="sr-only">Search</span>
+                <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <img src={lupa} alt="" />
+                  <svg className="h-5 w-5 fill-slate-300" viewBox="0 0 20 20">
+                    {" "}
+                  </svg>
+                </span>
+                <input
+                  className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                  placeholder="Cursos..."
+                  type="text"
+                  name="search"
+                />
+              </label>
+            </div>
             
               
                 <Menu>
@@ -98,13 +110,14 @@ function Navbar() {
                     </Menu.Items>
                     </Transition> 
                 </>
-                )}
-                </Menu>
-            </div>
+              )}
+            </Menu>
           </div>
         </div>
+      </div>
+     
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

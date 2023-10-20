@@ -1,5 +1,5 @@
 export default interface Categoria {
-    id: number;
-    ensino: string;
-    assunto: string;
-  }
+  id: number;
+  ensino: string;
+  assunto: string;
+}
