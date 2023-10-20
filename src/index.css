@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'creativo';
-    src: url('../src/assets/font/Creativo.otf');
-  }
+  font-family: "creativo";
+  src: url("../src/assets/font/Creativo.otf");
+}
