@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'edetodos';
+    font-style: normal;
+    font-weight: 400;
+    src: local('edetodos'), url('./edetodos.ttf') format('truetype');
+  }

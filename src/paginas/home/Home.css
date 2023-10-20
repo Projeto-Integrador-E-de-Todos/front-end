@@ -1,11 +1,5 @@
-.titulo{
-    color: blue;
-    text-align: center;
-}
 
-.img{
-    width: 500px;
-    height: 500px;
-    display: block;
-    margin: 0 auto;
+body {
+  background-image: url('/src/assets/img/background.jpg');
+  background-size: cover; 
 }

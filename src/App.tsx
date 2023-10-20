@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-
+import './assets/font/Creativo.otf'
+import './assets/font/edetodos.ttf'
 import Navbar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -19,7 +20,7 @@ function App() {
           <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/home" element={<Home />} />
