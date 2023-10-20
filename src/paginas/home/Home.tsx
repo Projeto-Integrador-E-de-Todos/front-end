@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './Home.css'
+import ModalCurso from '../../components/cursos/modalCurso/ModalCurso';
 import { useSpring, animated } from 'react-spring';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ function Home() {
     to: { opacity: 1, transform: 'translateY(0)' },
     config: { duration: 800 },
   });
+  
   return (
     <div style={props} className='h-56 flex item-center justify-end content-center pt-20 pe-20'>
       <div className='pt-20'>
@@ -21,6 +23,10 @@ function Home() {
          hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center">
           Voltar 
         </Link>
+        <div className="flex justify-around gap-4">
+          <ModalCurso />
+            <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver Cursos</button>
+          </div>
       </div>
       
 
