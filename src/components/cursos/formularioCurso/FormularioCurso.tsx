@@ -13,6 +13,14 @@ function FormularioCurso() {
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
+  const [aulas, setAulas] = useState<any[""]>([]);
+
+  const [aula, setAula] = useState("");
+
+  const [nomeAulas, setNomeAulas] = useState<any[""]>([]);
+
+  const [nomeAula, setNomeAula] = useState("");
+
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
   const [categoria, setCategoria] = useState<Categoria>({
@@ -141,12 +149,12 @@ function FormularioCurso() {
 
   const carregandoCategoria = categoria.assunto === "";
 
-  const [aulas, setAulas] = useState<any[""]>([]);
-
-  const [aula, setAula] = useState("");
-
   function cadastrarAula() {
     if (aula !== "") {
+      setCursos({
+        ...cursos,
+        aulas: [...cursos.aulas, aula],
+      });
       setAulas([...aulas, aula]);
       setAula("");
     } else {
@@ -155,17 +163,34 @@ function FormularioCurso() {
     console.log(aulas);
   }
 
+  function cadastrarNomeAula() {
+    if (nomeAula !== "") {
+      setCursos({
+        ...cursos,
+        nomeAulas: [...cursos.nomeAulas, nomeAula],
+      });
+      setNomeAulas([...nomeAulas, nomeAula]);
+      setNomeAula("");
+    } else {
+      alert("O campo não pode estar em branco");
+    }
+    console.log(nomeAulas);
+  }
+
+  function removerNomeAula(remove) {
+    const nomeAulasFiltered = nomeAulas.filter(
+      (nomeAula) => nomeAula !== remove
+    );
+    setNomeAulas(nomeAulasFiltered);
+  }
+
   function removerAula(remove) {
     const aulasFiltered = aulas.filter((aula) => aula !== remove);
     setAulas(aulasFiltered);
   }
 
-  function enviarForm() {
-    alert(`Suas aulas cadastradas são: ${aulas}`);
-  }
-
   return (
-    <div className="container flex flex-col mx-auto items-center ">
+    <div className="container flex flex-col mx-auto items-center">
       <h1 className="text-4xl text-center my-8"></h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoCurso}>
@@ -233,6 +258,19 @@ function FormularioCurso() {
         </div>
 
         <div className="flex flex-col gap-2">
+          <label htmlFor="descricao">Imagem</label>
+          <input
+            value={cursos.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="text"
+            placeholder="Link para a foto"
+            name="foto"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
           <p>Categoria do Curso</p>
           <select
             name="Categoria"
@@ -255,7 +293,7 @@ function FormularioCurso() {
           <label htmlFor="">Aulas</label>
           <input
             type="text"
-            placeholder="aulas"
+            placeholder="Aulas"
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setAula(e.target.value)
             }
@@ -264,7 +302,7 @@ function FormularioCurso() {
           />
           <button
             type="button"
-            className="bg-orange-400 text-slate-800 p-1 text-lg rounded"
+            className="bg-orange-300 text-slate-800 p-1 text-lg rounded"
             onClick={() => cadastrarAula()}
           >
             Adicionar aula(s)
@@ -275,7 +313,6 @@ function FormularioCurso() {
           <div className="flex gap-4 border border-slate-700 rounded p-2">
             {aulas.map((aula) => (
               <span
-                placeholder="Nenhuma aula cadastrada"
                 className="p-1 bg-teal-100 cursor-pointer hover:bg-orange-100"
                 onClick={() => removerAula(aula)}
               >
@@ -285,13 +322,38 @@ function FormularioCurso() {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="bg-orange-800 text-white py-1 px-4 text-lg rounded"
-          onClick={enviarForm}
-        >
-          Enviar tudo
-        </button>
+        <div className="flex flex-col w-64 gap-4">
+          <label htmlFor="">Nome das aulas</label>
+          <input
+            type="text"
+            placeholder="Nome das aulas"
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setNomeAula(e.target.value)
+            }
+            value={nomeAula}
+            className="border border-indigo-800 p-1 text-lg"
+          />
+          <button
+            type="button"
+            className="bg-orange-300 text-slate-800 p-1 text-lg rounded"
+            onClick={() => cadastrarNomeAula()}
+          >
+            Adicionar nome da(s) aula(s)
+          </button>
+        </div>
+        <div>
+          <h3>Nome das Aulas cadastradas</h3>
+          <div className="flex gap-4 border border-slate-700 rounded p-2">
+            {nomeAulas.map((nomeAula) => (
+              <span
+                className="p-1 bg-teal-100 cursor-pointer hover:bg-orange-100"
+                onClick={() => removerNomeAula(nomeAula)}
+              >
+                {nomeAula}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <button
           disabled={carregandoCategoria}

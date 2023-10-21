@@ -17,6 +17,10 @@ function CardCursos({ post }: CardCursosProps) {
           </h3>
         </div>
         <div className="p-4">
+          <div>
+            {" "}
+            <img src={post.foto}></img>
+          </div>
           <p className="text-lg font-semibold ">Instrutor: {post.instrutor}</p>
           <p>Descrição: {post.descricao}</p>
           <p>Categoria: {post.categoria?.assunto} </p>
