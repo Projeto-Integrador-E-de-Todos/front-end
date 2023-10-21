@@ -22,3 +22,8 @@
     width: 130px;
     height: 130px;
 }
+
+.zoom-on-hover:hover {
+    transform: scale(1.05); /* Aumenta o tamanho em 10% quando o mouse estiver sobre o elemento */
+    transition: transform 0.5s; /* Adiciona uma transição suave para o efeito */
+  }
