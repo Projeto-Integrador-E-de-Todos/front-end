@@ -141,8 +141,31 @@ function FormularioCurso() {
 
   const carregandoCategoria = categoria.assunto === "";
 
+  const [aulas, setAulas] = useState<any[""]>([]);
+
+  const [aula, setAula] = useState("");
+
+  function cadastrarAula() {
+    if (aula !== "") {
+      setAulas([...aulas, aula]);
+      setAula("");
+    } else {
+      alert("O campo não pode estar em branco");
+    }
+    console.log(aulas);
+  }
+
+  function removerAula(remove) {
+    const aulasFiltered = aulas.filter((aula) => aula !== remove);
+    setAulas(aulasFiltered);
+  }
+
+  function enviarForm() {
+    alert(`Suas aulas cadastradas são: ${aulas}`);
+  }
+
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto items-center ">
       <h1 className="text-4xl text-center my-8"></h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoCurso}>
@@ -227,10 +250,53 @@ function FormularioCurso() {
             ))}
           </select>
         </div>
+
+        <div className="flex flex-col w-64 gap-4">
+          <label htmlFor="">Aulas</label>
+          <input
+            type="text"
+            placeholder="aulas"
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setAula(e.target.value)
+            }
+            value={aula}
+            className="border border-slate-700 p-1 text-lg rounded p-2"
+          />
+          <button
+            type="button"
+            className="bg-orange-400 text-slate-800 p-1 text-lg rounded"
+            onClick={() => cadastrarAula()}
+          >
+            Adicionar aula(s)
+          </button>
+        </div>
+        <div>
+          <h3>Aulas cadastradas</h3>
+          <div className="flex gap-4 border border-slate-700 rounded p-2">
+            {aulas.map((aula) => (
+              <span
+                placeholder="Nenhuma aula cadastrada"
+                className="p-1 bg-teal-100 cursor-pointer hover:bg-orange-100"
+                onClick={() => removerAula(aula)}
+              >
+                {aula}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="bg-orange-800 text-white py-1 px-4 text-lg rounded"
+          onClick={enviarForm}
+        >
+          Enviar tudo
+        </button>
+
         <button
           disabled={carregandoCategoria}
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2"
+          className="rounded disabled:bg-slate-200 bg-orange-400 hover:bg-orange-500 text-white font-bold w-1/2 mx-auto block py-2"
         >
           {carregandoCategoria ? (
             <span>Carregando</span>

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './Home.css'
+import ModalCurso from '../../components/cursos/modalCurso/ModalCurso';
 import { useSpring, animated } from 'react-spring';
 import { Link, useNavigate } from 'react-router-dom';
 import Sobre from '../sobre/Sobre';
@@ -13,9 +14,10 @@ function Home() {
     to: { opacity: 1, transform: 'translateY(0)' },
     config: { duration: 800 },
   });
+  
   return (
+
       <>
-      
         <section className='pb-96'>
           <animated.div style={props} className='relative h-56 flex item-center justify-end content-center pt-20 pe-20 '>
             <div className='pt-20'>
