@@ -5,7 +5,7 @@ import { Menu} from "@headlessui/react";
 import "./navbar.css";
 import perso from "../../assets/img/person.jpg";
 import lupa from "../../assets/img/lupa.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo444.png";
 
 
 function Navbar() {
@@ -23,7 +23,7 @@ function Navbar() {
 
   return (
     <>
-     <div className='relative z-20 w-full bg-gradient-to-t from-orange-500 via-yellow-300 to-opacity-90 text-white flex justify-center py-4'>
+     <div className='relative z-20 w-full bg-gradient-to-b from-orange-500 via-yellow-300 to-opacity-90 text-black flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
 
           <Link to='/home' className='text-2xl font-bold uppercase'><img src={logo} alt="" className='logo'/></Link>
