@@ -1,11 +1,12 @@
-import React, { useContext, Fragment } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Menu, Transition } from "@headlessui/react";
+import { Menu} from "@headlessui/react";
 import "./navbar.css";
-import gu from "../../assets/img/gu.jpg";
+import perso from "../../assets/img/person.jpg";
 import lupa from "../../assets/img/lupa.png";
 import logo from "../../assets/logo.png";
+
 
 function Navbar() {
   const navigate = useNavigate();
@@ -18,11 +19,11 @@ function Navbar() {
     navigate("/login");
   }
 
-  let navbarComponent;
+
 
   return (
     <>
-     <div className='w-full bg-transparent text-white flex justify-center py-4'>
+     <div className='relative z-20 w-full bg-transparent text-white flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
 
           <Link to='/home' className='text-2xl font-bold uppercase'><img src={logo} alt="" className='logo'/></Link>
@@ -59,62 +60,60 @@ function Navbar() {
             </div>
             
               
-                <Menu>
+            <Menu as='div' className="relative">
+             
                 {({ open }) => (
                   <>
-
-                    <Menu.Button className='relative cicle ring-4 ring-blue-300 focus:outline-none focus:ring-4 focus:ring-violet-300 pb-1'>
-                      <div>
-                       <img src={gu} alt="" className='user '/>
-                      </div>
-                    </Menu.Button>
-                  <Transition
-                    show={open}
-                    enter="transition duration-100 ease-out"
-                    enterFrom="transform scale-95 opacity-0"
-                    enterTo="transform scale-95 opacity-100"
-                    leave="transition duration-75 ease-out"
-                    leaveFrom="transform scale-95 opacity-100"
-                    leaveTo="transform scale-95 opacity-0"
-                    >
-                      <Menu.Items className="absolute -inset-x-5 right-20  bg-white mt-2 w-70 divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <div className="px-3 py-4 ">
-                          <Menu.Item>
-                            {({ active }) => (
-                            <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                              <Link to='/cadastro' className='hover:underline'>Matricule-se</Link>
-                            </button>
-                            )}
-                          </Menu.Item>
+                      <Menu.Button className=' cicle ring-4 ring-blue-300 focus:outline-none focus:ring-4 focus:ring-violet-300 pb-1'>
+                        <div>
+                         <img src={usuario.foto != "" ? usuario.foto : perso } alt="" className=' w-full h-full '/>
                         </div>
-                        <div className='px-3 py-4'>
+                      </Menu.Button>
+                    
+                      {open &&(
+                        
+                      
+                        <Menu.Items className="absolute right-4 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <div className="px-3 py-4 ">
+                            <Menu.Item>
+                              {({ active }) => (
+                              <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                <Link to='/cadastro' className='hover:underline'>Matricule-se</Link>
+                              </button>
+                              )}
+                            </Menu.Item>
+                          </div>
+                          <div className='px-3 py-4'>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                <Link to='/login' className='hover:underline'>Login</Link>
+                                </button>
+                              )}
+                            </Menu.Item>
+                          </div>
+                          
+                        <div className="px-3 py-4">
                           <Menu.Item>
                             {({ active }) => (
-                              <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                              <Link to='/login' className='hover:underline'>Login</Link>
+                              <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
+                              <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
                               </button>
                             )}
                           </Menu.Item>
                         </div>
                         
-                      <div className="px-3 py-4">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
-                            <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
-                            </button>
-                          )}
-                        </Menu.Item>
-                      </div>
+                      </Menu.Items>
                       
-                    </Menu.Items>
-                    </Transition> 
-                </>
-              )}
-            </Menu>
+                      )}
+                 </>
+                  )}
+                
+                  </Menu>
+              </div>
           </div>
         </div>
-      </div>
+      
      
     </>
   );
