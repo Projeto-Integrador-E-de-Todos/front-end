@@ -15,6 +15,8 @@ import DeletarCurso from "./components/cursos/deletarCurso/DeletarCurso";
 import ListaCategorias from "./components/categorias/listaCategorias/ListaCategorias";
 import FormularioCategoria from "./components/categorias/formularioCategorias/FormularioCategorias";
 import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategorias";
+import CursoPagina from './paginas/cursoPagina/CursoPagina';
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cursos" element={<ListaCursos />} />
+              <Route path="/cursos/:id" element={<CursoPagina />} />
               <Route path="/cadastroCurso" element={<FormularioCurso />} />
               <Route path="/editarCurso/:id" element={<FormularioCurso />} />
               <Route path="/deletarCurso/:id" element={<DeletarCurso />} />

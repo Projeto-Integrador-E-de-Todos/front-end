@@ -8,20 +8,19 @@ interface CardCursosProps {
 
 function CardCursos({ post }: CardCursosProps) {
   return (
-    <div className="border-slate-900 border flex flex-col rounded overflow-hidden justify-between bg-slate-200">
+    <div className="bg-slate-200 border-slate-900 border flex flex-col rounded overflow-hidden justify-between">
       <div>
         <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
+          <Link to={`/cursos/${post.id}`}>
           {/*<img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />*/}
           <h3 className="text-lg font-bold text-center uppercase ">
             Curso: {post.nomecurso}
           </h3>
+          </Link>
         </div>
-        <div className="p-4">
-          <div>
-            {" "}
-            <img src={post.foto}></img>
-          </div>
-          <p className="text-lg font-semibold ">Instrutor: {post.instrutor}</p>
+        <div className=" flex w-full p-2"> <img className="justify-items-center" src={post.foto}></img></div>
+        <div className="p-4 ">
+          <p className="text-lg font-semibold">Instrutor: {post.instrutor}</p>
           <p>Descrição: {post.descricao}</p>
           <p>Categoria: {post.categoria?.assunto} </p>
           <p>Duração: {post.duracao}</p>
