@@ -1,0 +1,27 @@
+.sobre-box{
+    color: rgb(255, 197, 61);
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    transition: .2s;
+}
+.sobre-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #fff70098;
+}
+
+
+
+.div-com-espaco {
+    margin-right: 25px; /* Ou qualquer outro valor de margem desejado */
+    margin-left: 25px;
+  }
+
+  .margin-bottom-h1 {
+    margin-bottom: 80px; /* Ou qualquer outro valor de margem desejado */
+  }
+
+  .grafic{
+    color: rgb(255, 197, 61);
+
+  }
