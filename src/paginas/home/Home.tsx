@@ -27,7 +27,7 @@ function Home() {
           </animated.div>
           </section>
         
-          <section className='pb-96'><Sobre /></section>
+          <section className='pb-96 pt-20' style={{ marginBottom: '2rem' }}><Sobre /></section>
 
           <section className='relative'></section>
       
