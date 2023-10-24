@@ -8,8 +8,9 @@
 }
 
 .user {
-    width: 100%;
-    height: auto;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
 }
 
 .redondo{

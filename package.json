@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.0.0-dev.0ce63d8",
+    "@heroicons/react": "^2.0.18",
     "@phosphor-icons/react": "^2.0.13",
     "axios": "^1.5.1",
     "bootstrap-icons": "^1.11.1",

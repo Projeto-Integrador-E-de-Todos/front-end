@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        creativo: ['creativo', 'sans-serif']
+        creativo: ['creativo', 'sans-serif'],
+        edetodos: ['edetodos', 'sans-serif']
       },
     },
   },

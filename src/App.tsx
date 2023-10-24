@@ -16,6 +16,7 @@ import ListaCategorias from "./components/categorias/listaCategorias/ListaCatego
 import FormularioCategoria from "./components/categorias/formularioCategorias/FormularioCategorias";
 import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategorias";
 import CursoPagina from './paginas/cursoPagina/CursoPagina';
+import Perfil from './paginas/perfil/Perfil';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               <Route path="/editarCurso/:id" element={<FormularioCurso />} />
               <Route path="/deletarCurso/:id" element={<DeletarCurso />} />
               <Route path="/categorias" element={<ListaCategorias />} />
+              <Route path='/perfil' element={<Perfil/>} />
               <Route
                 path="/cadastroCategoria"
                 element={<FormularioCategoria />}

@@ -11,7 +11,7 @@ function ModalCurso() {
     <>
       <Popup
         trigger={
-          <button className="border rounded px-4 hover:bg-white hover:text-indigo-800">
+          <button className="">
             Novo Curso
           </button>
         }
