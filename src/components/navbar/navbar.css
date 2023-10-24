@@ -1,0 +1,37 @@
+.cicle {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; 
+    width: 70px; 
+    height: 70px;
+}
+
+.user {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.redondo{
+    border-radius: 50%;
+    width: 75px; 
+    height: 75px;
+}
+
+.logo{
+    width: 130px;
+    height: 130px;
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.05); /* Aumenta o tamanho em 10% quando o mouse estiver sobre o elemento */
+    transition: transform 0.5s; /* Adiciona uma transição suave para o efeito */
+  }
+
+  .popup-content {
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+    overflow-y: scroll;
+    height: 600px;
+  }
