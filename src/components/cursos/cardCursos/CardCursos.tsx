@@ -13,14 +13,14 @@ function CardCursos({ post }: CardCursosProps) {
         <div className="flex w-full bg-sky-400 py-2 px-4 items-center gap-4">
           <Link to={`/cursos/${post.id}`}>
             {/*<img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />*/}
-            <h3 className="text-lg font-bold text-center uppercase ">
-              Curso: {post.nomecurso}
+            <h3 className="text-lg font-bold text-center uppercase">
+              {post.nomecurso}
             </h3>
           </Link>
         </div>
-        <div className=" flex w-full p-2">
+        <div className=" flex w-full p-2 justify-center">
           {" "}
-          <img className="justify-items-center" src={post.foto}></img>
+          <img className="justify-items-center pt-2" src={post.foto}></img>
         </div>
         <div className="p-4 ">
           <p className="text-lg font-semibold">Instrutor: {post.instrutor}</p>

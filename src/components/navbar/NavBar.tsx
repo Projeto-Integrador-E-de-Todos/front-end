@@ -51,7 +51,7 @@ function Navbar() {
                     <Menu.Item>
                       {({ active }) => (
                        <Link to='/cursos' className=''>
-                        <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
+                        <button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
                         Todos os cursos
                         </button>
                        </Link>
@@ -62,7 +62,7 @@ function Navbar() {
                     <Menu.Item>
                       {({ active }) => (
                           
-                          <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
+                          <button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
                           <ModalCurso/>
                           </button>
                           
@@ -91,7 +91,7 @@ function Navbar() {
                     <Menu.Item>
                       {({ active }) => (
                        <Link to='/categorias' className=''>
-                        <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
+                        <button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
                         Todos as categorias
                         </button>
                        </Link>
@@ -102,7 +102,7 @@ function Navbar() {
                     <Menu.Item>
                       {({ active }) => (
                            <Link to='/cadastroCategoria' className=''>
-                           <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
+                           <button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
                            Nova categoria
                            </button>
                           </Link>
@@ -153,7 +153,7 @@ function Navbar() {
                           <div className="px-3 py-4">
                             <Menu.Item>
                               {({ active }) => (
-                                <Link to='/perfil' className=''><button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
+                                <Link to='/perfil' className=''><button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
                                 Perfil
                                 </button></Link>
                               )}
@@ -162,7 +162,7 @@ function Navbar() {
                           <div className="px-3 py-4">
                             <Menu.Item>
                               {({ active }) => (
-                                <Link to='' onClick={logout} className=''><button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
+                                <Link to='' onClick={logout} className=''><button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
                                 Sair
                                 </button></Link>
                               )}
@@ -174,7 +174,7 @@ function Navbar() {
                             <div className='px-3 py-4'>
                               <Menu.Item>
                                 {({ active }) => (
-                                  <Link to='/login' className=''><button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                  <Link to='/login' className=''><button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                   Login
                                   </button></Link>
                                 )}
@@ -184,7 +184,7 @@ function Navbar() {
                           <div className='px-3 py-4'>
                               <Menu.Item>
                                 {({ active }) => (
-                                  <Link to='/cadastro' className=''><button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                                  <Link to='/cadastro' className=''><button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                                   Cadastre-se
                                   </button></Link>
                                 )}

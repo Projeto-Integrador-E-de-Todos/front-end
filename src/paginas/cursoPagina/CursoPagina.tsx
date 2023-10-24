@@ -41,7 +41,9 @@ function CursoPagina() {
   }, [id]);
 
   return (
+
     
+
     <>
     <section>
       <div className="bg-orange-100 w-13 flex flex-row justify-center items-center">
@@ -49,14 +51,19 @@ function CursoPagina() {
           <img src={livro} alt="" className="h-36" />
         </div>
         <div>
-          <p className="pb-2">Curso de:</p>
           <h2 className="font-creativo text-5xl font-bold">
             {post.nomecurso}
           </h2>
         </div>
       </div>
-      <div className="bg-orange-50 pl-60">
-        <h2>{post.descricao}</h2>
+      <div className="bg-orange-50 justify-center pl-10 pt-10 pb-10">
+        <h2 className="text-2xl font-bold">Porque você deve fazer este curso:</h2>
+        <h2 className="text-xl">{post.descricao}</h2>
+        <div className="flex justify-center items-center pt-20 pb-20">
+          <iframe width="560" height="315" src={post.aulas} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <h2 className="text-2xl font-bold">Se interessou pelo curso? Se Matricule hoje mesmo!</h2>
+        <button className="bg-slate-400 text-xl">Matricule-se</button>
       </div>
     </section>
       
