@@ -45,7 +45,7 @@ function Navbar() {
                       <ChevronDownIcon className=" -mr-1 h-5 w-5 text-black " aria-hidden="true"/>
                  </Menu.Button>
                  {open &&(
-                 <Menu.Items className="absolute right-4 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                 <Menu.Items className="absolute right-4 mt-2 w-36 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 
                   <div className="px-3 py-2">
                     <Menu.Item>
@@ -61,9 +61,11 @@ function Navbar() {
                   <div className="px-3 py-2">
                     <Menu.Item>
                       {({ active }) => (
+                          
                           <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
                           <ModalCurso/>
                           </button>
+                          
                       )}
                     </Menu.Item>
                   </div>
@@ -83,7 +85,7 @@ function Navbar() {
                       <ChevronDownIcon className=" -mr-1 h-5 w-5 text-black " aria-hidden="true"/>
                  </Menu.Button>
                  {open &&(
-                 <Menu.Items className="absolute right-4 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                 <Menu.Items className="absolute right-4 mt-2 w-40 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 
                   <div className="px-3 py-2">
                     <Menu.Item>

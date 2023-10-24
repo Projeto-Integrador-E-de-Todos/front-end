@@ -28,3 +28,10 @@
     transform: scale(1.05); /* Aumenta o tamanho em 10% quando o mouse estiver sobre o elemento */
     transition: transform 0.5s; /* Adiciona uma transição suave para o efeito */
   }
+
+  .popup-content {
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+    overflow-y: scroll;
+    height: 600px;
+  }

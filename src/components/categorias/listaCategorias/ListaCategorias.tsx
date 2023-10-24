@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Dna } from "react-loader-spinner";
+import { FadeLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Categorias from "../../../models/Categoria";
@@ -40,14 +40,16 @@ function ListaCategorias() {
   return (
     <>
       {categorias.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
+        <div className=" flex justify-center item-end p-28">
+          <FadeLoader
+          color="#ff009d"
+          height={18}
+          margin={2}
+          radius={3}
+          speedMultiplier={2}
+          width={8}
         />
+        </div>
       )}
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">

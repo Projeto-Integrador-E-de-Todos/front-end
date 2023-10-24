@@ -1,9 +1,9 @@
 import { useNavigate, Link } from "react-router-dom";
 import React from "react";
 import './sobre.css';
-import icone1 from "../../assets/personalized_learning_icon.png";
-import icone2 from "../../assets/empower_teachers_icon.png";
-import icone3 from "../../assets/trusted_content_icon.png";
+import icone1 from "../../assets/img/personalized_learning_icon.png"
+import icone2 from "../../assets/img/empower_teachers_icon.png";
+import icone3 from "../../assets/img/trusted_content_icon.png";
 
 
 
