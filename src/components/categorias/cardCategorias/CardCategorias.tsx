@@ -9,7 +9,7 @@ interface CardCategoriasProps {
 function CardCategorias({ post }: CardCategoriasProps) {
   return (
     <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-      <header className="py-2 px-6 bg-green-900 text-white font-bold text-2xl">
+      <header className="py-2 px-6 bg-sky-400 text-black font-bold text-2xl">
         Categorias : {post.ensino}
       </header>
       <p className="p-8 text-3xl bg-slate-200 h-full">{post.ensino}</p>
@@ -17,7 +17,7 @@ function CardCategorias({ post }: CardCategoriasProps) {
       <div className="flex">
         <Link
           to={`/editarCategoria/${post.id}`}
-          className="w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2"
+          className="w-full text-slate-100 bg-sky-500 hover:bg-sky-400 flex items-center justify-center py-2"
         >
           <button>Editar</button>
         </Link>

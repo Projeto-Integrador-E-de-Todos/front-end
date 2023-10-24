@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Menu} from "@headlessui/react";
+import { Menu } from "@headlessui/react";
 import "./navbar.css";
 import perso from "../../assets/img/person.jpg";
 import lupa from "../../assets/img/lupa.png";
 import logo from "../../assets/logo444.png";
-
 
 function Navbar() {
   const navigate = useNavigate();
@@ -19,14 +18,13 @@ function Navbar() {
     navigate("/login");
   }
 
-
-
   return (
     <>
-     <div className='relative z-20 w-full bg-gradient-to-b from-orange-500 via-yellow-300 to-opacity-90 text-black flex justify-center py-4'>
-          <div className="container flex justify-between text-lg">
-
-          <Link to='/home' className='text-2xl font-bold uppercase'><img src={logo} alt="" className='logo'/></Link>
+      <div className="relative z-20 w-full bg-gradient-to-b from-orange-500 via-yellow-300 to-opacity-90 text-black flex justify-center py-4">
+        <div className="container flex justify-between text-lg">
+          <Link to="/home" className="text-2xl font-bold uppercase">
+            <img src={logo} alt="" className="logo" />
+          </Link>
 
           <div className="flex flex-row gap-4 items-center ">
             <Link to="/home" className="hover:underline">
@@ -58,63 +56,86 @@ function Navbar() {
                 />
               </label>
             </div>
-            
-              
-            <Menu as='div' className="relative">
-             
-                {({ open }) => (
-                  <>
-                      <Menu.Button className=' cicle ring-4 ring-blue-300 focus:outline-none focus:ring-4 focus:ring-violet-300 pb-1'>
-                        <div>
-                         <img src={usuario.foto != "" ? usuario.foto : perso } alt="" className=' w-full h-full '/>
-                        </div>
-                      </Menu.Button>
-                    
-                      {open &&(
-                        
-                      
-                        <Menu.Items className="absolute right-4 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                          <div className="px-3 py-4 ">
-                            <Menu.Item>
-                              {({ active }) => (
-                              <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                <Link to='/cadastro' className='hover:underline'>Matricule-se</Link>
-                              </button>
-                              )}
-                            </Menu.Item>
-                          </div>
-                          <div className='px-3 py-4'>
-                            <Menu.Item>
-                              {({ active }) => (
-                                <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                                <Link to='/login' className='hover:underline'>Login</Link>
-                                </button>
-                              )}
-                            </Menu.Item>
-                          </div>
-                          
-                        <div className="px-3 py-4">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`} >
-                              <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
-                              </button>
-                            )}
-                          </Menu.Item>
-                        </div>
-                        
-                      </Menu.Items>
-                      
-                      )}
-                 </>
+
+            <Menu as="div" className="relative">
+              {({ open }) => (
+                <>
+                  <Menu.Button className=" cicle ring-4 ring-blue-300 focus:outline-none focus:ring-4 focus:ring-violet-300 pb-1">
+                    <div>
+                      <img
+                        src={usuario.foto != "" ? usuario.foto : perso}
+                        alt=""
+                        className=" w-full h-full "
+                      />
+                    </div>
+                  </Menu.Button>
+
+                  {open && (
+                    <Menu.Items className="absolute right-4 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="px-3 py-4 ">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              className={`${
+                                active
+                                  ? "bg-violet-500 text-white"
+                                  : "text-gray-900"
+                              } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                            >
+                              <Link to="/cadastro" className="hover:underline">
+                                Matricule-se
+                              </Link>
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                      <div className="px-3 py-4">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              className={`${
+                                active
+                                  ? "bg-violet-500 text-white"
+                                  : "text-gray-900"
+                              } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                            >
+                              <Link to="/login" className="hover:underline">
+                                Login
+                              </Link>
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+
+                      <div className="px-3 py-4">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              className={`${
+                                active
+                                  ? "bg-violet-500 text-white"
+                                  : "text-gray-900"
+                              } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                            >
+                              <Link
+                                to=""
+                                onClick={logout}
+                                className="hover:underline"
+                              >
+                                Sair
+                              </Link>
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
                   )}
-                
-                  </Menu>
-              </div>
+                </>
+              )}
+            </Menu>
           </div>
         </div>
-      
-     
+      </div>
     </>
   );
 }
