@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+
 import './Home.css'
-import ModalCurso from '../../components/cursos/modalCurso/ModalCurso';
+
 import { useSpring, animated } from 'react-spring';
-import { Link, useNavigate } from 'react-router-dom';
+
 import Sobre from '../sobre/Sobre';
 
 

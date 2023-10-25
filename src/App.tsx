@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './App.css';
 import './assets/font/Creativo.otf';
 import './assets/font/edetodos.ttf';

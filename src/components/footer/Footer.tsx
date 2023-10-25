@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './footer.css';
 
 import {GithubLogo } from '@phosphor-icons/react';

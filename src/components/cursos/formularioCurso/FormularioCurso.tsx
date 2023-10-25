@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from "react";
+import  { ChangeEvent, JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Cursos from "../../../models/Cursos";
@@ -177,13 +177,13 @@ function FormularioCurso() {
     console.log(nomeAulas);
   }
 
-  function removerNomeAula(remove){
-    const nomeAulasFiltered = nomeAulas.filter(nomeAula => nomeAula !== remove)
+  function removerNomeAula(remove: any){
+    const nomeAulasFiltered = nomeAulas.filter((nomeAula: any) => nomeAula !== remove)
     setNomeAulas(nomeAulasFiltered)
   }
 
-  function removerAula(remove){
-    const aulasFiltered = aulas.filter(aula => aula !== remove)
+  function removerAula(remove: string){
+    const aulasFiltered = aulas.filter((aula: string) => aula !== remove)
     setAulas(aulasFiltered)
   }
 
@@ -296,7 +296,7 @@ function FormularioCurso() {
         <div>
           <h3>Aulas cadastradas</h3>
           <div className="flex gap-4 border border-slate-700 rounded p-2">
-          {aulas.map((aula) => (
+          {aulas.map((aula: string ) => (
             <span className='p-1 bg-teal-100 cursor-pointer hover:bg-orange-100' onClick={() => removerAula(aula)}>{aula}</span>
           ))}
           {cursos.aulas.map((aula) => (
@@ -314,7 +314,7 @@ function FormularioCurso() {
         <div>
           <h3>Nome das Aulas cadastradas</h3>
           <div className="flex gap-4 border border-slate-700 rounded p-2">
-          {nomeAulas.map((nomeAula) => (
+          {nomeAulas.map((nomeAula: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => (
             <span className='p-1 bg-teal-100 cursor-pointer hover:bg-orange-100' onClick={() => removerNomeAula(nomeAula)}>{nomeAula}</span>
           ))}
           {cursos.aulas.map((nomeAula) => (

@@ -1,4 +1,4 @@
-import React from "react";
+
 import FormularioCurso from "../formularioCurso/FormularioCurso";
 
 import "reactjs-popup/dist/index.css";
