@@ -1,13 +1,13 @@
 
 
 interface VideoPlayerProps {
-  videoUrl: string | undefined | null;
+  videoUrl: string;
 }
 
-function VideoPlayer({ videoUrl }: VideoPlayerProps) {
-  if (!videoUrl) {
-    return null;
-  }
+ 
+
+function VideoPlayer({videoUrl}: VideoPlayerProps ) {
+
   return (
     <iframe
       width="560"

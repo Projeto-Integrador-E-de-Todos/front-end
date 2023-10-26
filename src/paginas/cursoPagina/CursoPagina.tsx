@@ -4,12 +4,17 @@ import Cursos from "../../models/Cursos";
 import { AuthContext } from "../../contexts/AuthContext";
 import { buscar } from "../../services/Service";
 import livro from "../../assets/livro.png";
+import VideoPlayer from "./VideoPlayer";
 
 
 
 function CursoPagina() {
 
   const [post, setPost] = useState<Cursos>({} as Cursos);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const handleVideoSelect = (videoUrl: any) => {
+    setSelectedVideo(videoUrl);
+  };
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const { usuario, handleLogout } = useContext(AuthContext);
@@ -40,6 +45,12 @@ function CursoPagina() {
       buscarPorId(id);
     }
   }, [id]);
+  useEffect(() => {
+    
+    if (post.aulas && post.aulas.length > 0) {
+      setSelectedVideo(post.aulas[0]);
+    }
+  }, [post.aulas]);
 
   return (
 
@@ -57,11 +68,23 @@ function CursoPagina() {
           </h2>
         </div>
       </div>
-      <div className="bg-orange-50 justify-center pl-10 pt-10 pb-10">
+      <div className="bg-orange-50  pl-10 pt-10 pb-10">
         <h2 className="text-2xl font-bold">Porque você deve fazer este curso:</h2>
         <h2 className="text-xl">{post.descricao }</h2>
-        <div className="flex justify-center items-center pt-20 pb-20">
-         
+        <div className=" flex flex-row-reverse justify-between items-center">
+          <div></div>
+          
+         <div className="container flex flex-col justify-center items-center  ">
+            {post.aulas && post.aulas.map((videoUrl, index) =>  (
+              <button className="py-2 bg-sky-500  box-border h-16 w-16 font-edetodos" key={index} onClick={() => handleVideoSelect(videoUrl)}>
+                Aula {index + 1}
+              </button>
+            ))}
+         </div>
+       
+          <div className="flex justify-center items-center pt-20 pb-20 px-36">
+          {selectedVideo && <VideoPlayer videoUrl={selectedVideo} />}
+        </div>
         </div>
         <h2 className="text-2xl font-bold">Se interessou pelo curso? Se Matricule hoje mesmo!</h2>
         <button className="bg-slate-400 text-xl">Matricule-se</button>
