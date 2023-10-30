@@ -188,8 +188,11 @@ function FormularioCurso() {
   }
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
-      <h1 className="text-4xl text-center my-8"></h1>
+    
+    <div className="container flex flex-col items-center justify-center mx-auto">
+      <h1 className="text-4xl text-center my-8">
+        {id === undefined ? "Cadastre um novo curso" : "Editar curso"}
+      </h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoCurso}>
         <div className="flex flex-col gap-2">

@@ -7,7 +7,7 @@ import "./navbar.css";
 import perso from "../../assets/img/person.jpg";
 import lupa from "../../assets/img/lupa.png";
 import logo from "../../assets/logo444.png";
-import ModalCurso from "../cursos/modalCurso/ModalCurso";
+
 
 
 
@@ -61,10 +61,11 @@ function Navbar() {
                   <div className="px-3 py-2">
                     <Menu.Item>
                       {({ active }) => (
-                          
-                          <button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
-                          <ModalCurso/>
-                          </button>
+                        <Link to='/cadastroCurso' className=''>
+                        <button className={`${active ? 'bg-sky-500 text-white' : 'text-gray-900' } group flex w-full items-center rounded-md px-2 py-1 text-sm`} >
+                        Novo Curso
+                        </button>
+                        </Link>
                           
                       )}
                     </Menu.Item>

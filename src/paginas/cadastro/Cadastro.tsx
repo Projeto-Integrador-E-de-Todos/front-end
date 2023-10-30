@@ -64,8 +64,8 @@ function Cadastro() {
 
     } else {
       alert('Dados inconsistentes. Verifique as informações de cadastro.')
-      setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
-      setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
+      setUsuario({ ...usuario, senha: "" }) 
+      setConfirmaSenha("")                 
     }
   }
 
@@ -74,7 +74,7 @@ function Cadastro() {
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
         <div className="fundoCadastro hidden lg:block"></div>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
-          <h2 className='text-slate-900 text-5xl'>Matricule-se</h2>
+          <h2 className='text-slate-900 text-5xl'>Cadastre-se</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
