@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <>
-     <div className='relative z-20 w-full bg-gradient-to-b from-orange-500 via-yellow-300 to-opacity-90 text-black flex justify-center py-4'>
+     <div className='relative z-20 w-full bg-gradient-to-b from-orange-500 via-yellow-300 font-bold to-opacity-90 text-black flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
 
           <Link to='/home' className='text-2xl font-bold uppercase'><img src={logo} alt="" className='logo'/></Link>

@@ -11,7 +11,7 @@ function Footer(){
                         <p className='text-xl font-bold mb-2'>É De Todos | Copyright: 2023</p>
                         <p className='text-lg '>Acesse Nosso GitHub</p>
                     <div className='flex '>  
-                        <a href='' target='_blank'><GithubLogo size={48} weight='bold'/></a>
+                        <a href='https://github.com/Projeto-Integrador-E-de-Todos' target='_blank'><GithubLogo size={48} weight='bold'/></a>
                     </div>
                 </div>
             </div>
